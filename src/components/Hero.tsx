@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-hero overflow-hidden">
+    <section id="home" className="section-scroll-offset relative min-h-screen flex items-center justify-center bg-hero overflow-hidden pt-16 sm:pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -35,7 +35,7 @@ const Hero = () => {
           className="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-accent/10 blur-3xl"
         />
         {/* Grid Pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -44,7 +44,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="site-container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div

@@ -41,7 +41,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${isScrolled ? 'shadow-card border-b border-border' : ''
         }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="site-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <motion.a
@@ -111,7 +111,7 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-background border-t border-border max-h-[calc(100vh-4rem)] overflow-y-auto"
           >
-            <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
+            <nav className="site-container py-4 flex flex-col gap-3">
               {navItems.map((item) => (
                 <a
                   key={item.href}

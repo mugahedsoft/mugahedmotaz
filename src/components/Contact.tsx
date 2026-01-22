@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { 
-  Mail, 
-  MessageCircle, 
+import {
+  Mail,
+  MessageCircle,
   Send,
   ArrowRight,
   ArrowLeft,
@@ -32,10 +32,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     toast({
       title: t('Message Sent!', 'تم إرسال الرسالة!'),
       description: t(
@@ -43,7 +43,7 @@ const Contact = () => {
         'شكراً لتواصلك. سأرد عليك قريباً.'
       ),
     });
-    
+
     setFormData({ name: '', email: '', message: '' });
     setIsSubmitting(false);
   };
@@ -64,14 +64,14 @@ const Contact = () => {
       icon: MessageCircle,
       labelEn: 'WhatsApp',
       labelAr: 'واتساب',
-      value: '+1 234 567 890',
-      href: 'https://wa.me/1234567890',
+      value: '+249 900318100',
+      href: 'https://wa.me/249900318100',
     },
   ];
 
   return (
-    <section id="contact" className="py-24 bg-secondary" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="contact" className="section-scroll-offset py-24 bg-secondary" ref={ref}>
+      <div className="site-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Info */}
           <motion.div

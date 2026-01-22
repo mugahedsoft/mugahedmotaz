@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { 
-  Lightbulb, 
-  FileSearch, 
-  PenTool, 
-  Code, 
-  TestTube2, 
-  Rocket, 
-  HeartHandshake 
+import {
+  Lightbulb,
+  FileSearch,
+  PenTool,
+  Code,
+  TestTube2,
+  Rocket,
+  HeartHandshake
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -77,8 +77,8 @@ const Workflow = () => {
   ];
 
   return (
-    <section id="workflow" className="py-24 bg-primary" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="workflow" className="section-scroll-offset py-24 bg-primary" ref={ref}>
+      <div className="site-container">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -105,7 +105,7 @@ const Workflow = () => {
         <div className="relative">
           {/* Connection Line */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-white/10 -translate-y-1/2" />
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
             {steps.map((step, index) => (
               <motion.div
@@ -120,7 +120,7 @@ const Workflow = () => {
                   <div className="relative z-10 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:border-accent transition-all duration-300">
                     <step.icon className="w-7 h-7 text-white group-hover:scale-110 transition-transform" />
                   </div>
-                  
+
                   {/* Number Badge */}
                   <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center z-20">
                     {step.number}

@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { 
-  Globe, 
-  Layout, 
-  Smartphone, 
-  Database, 
-  Palette, 
-  Target, 
-  TrendingUp, 
+import {
+  Globe,
+  Layout,
+  Smartphone,
+  Database,
+  Palette,
+  Target,
+  TrendingUp,
   Layers,
-  ArrowUpRight 
+  ArrowUpRight
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -94,8 +94,8 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-background" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="services" className="section-scroll-offset py-24 bg-background" ref={ref}>
+      <div className="site-container">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -133,7 +133,7 @@ const Services = () => {
             >
               {/* Background Gradient on Hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
+
               <div className="relative z-10">
                 {/* Icon */}
                 <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">

@@ -133,6 +133,20 @@
 }
 
 @layer utilities {
+  .site-container {
+    @apply mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-scroll-offset {
+    scroll-margin-top: 4rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-scroll-offset {
+      scroll-margin-top: 5rem;
+    }
+  }
+
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-accent);

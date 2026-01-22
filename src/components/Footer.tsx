@@ -23,11 +23,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary py-12">
-      <div className="container mx-auto px-4">
+      <div className="site-container">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
           <div className="text-center md:text-start">
-            <a 
+            <a
               href="#home"
               onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
               className="text-2xl font-bold text-white"

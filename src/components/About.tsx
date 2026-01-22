@@ -43,8 +43,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-secondary" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="about" className="section-scroll-offset py-24 bg-secondary" ref={ref}>
+      <div className="site-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image/Visual */}
           <motion.div
@@ -57,7 +57,7 @@ const About = () => {
               {/* Background decoration */}
               <div className="absolute inset-0 bg-primary rounded-3xl rotate-3" />
               <div className="absolute inset-0 bg-accent rounded-3xl -rotate-3 opacity-80" />
-              
+
               {/* Main content card */}
               <div className="relative bg-card rounded-3xl p-8 shadow-lg h-full flex flex-col justify-center">
                 <div className="space-y-6">
@@ -102,7 +102,7 @@ const About = () => {
                 'أحوّل الأفكار إلى واقع رقمي'
               )}
             </h2>
-            
+
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
                 {t(

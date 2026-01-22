@@ -81,13 +81,13 @@ const Portfolio = () => {
     },
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(p => p.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-24 bg-secondary" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="portfolio" className="section-scroll-offset py-24 bg-secondary" ref={ref}>
+      <div className="site-container">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -122,11 +122,10 @@ const Portfolio = () => {
               key={filter.id}
               variant={activeFilter === filter.id ? 'default' : 'outline'}
               onClick={() => setActiveFilter(filter.id)}
-              className={`font-medium ${
-                activeFilter === filter.id 
-                  ? 'bg-accent text-accent-foreground hover:bg-accent/90' 
+              className={`font-medium ${activeFilter === filter.id
+                  ? 'bg-accent text-accent-foreground hover:bg-accent/90'
                   : 'hover:border-accent hover:text-accent'
-              }`}
+                }`}
             >
               {t(filter.en, filter.ar)}
             </Button>
@@ -150,14 +149,14 @@ const Portfolio = () => {
               {/* Project Image Placeholder */}
               <div className={`aspect-[4/3] bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
                 {/* Grid Pattern Overlay */}
-                <div 
+                <div
                   className="absolute inset-0 opacity-20"
                   style={{
                     backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
                     backgroundSize: '20px 20px',
                   }}
                 />
-                
+
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                   <Button size="icon" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
