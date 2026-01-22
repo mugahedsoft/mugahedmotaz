@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors - mugahedmotaz */
+    --brand-blue: 210 78% 23%; /* #0D3B66 */
+    --brand-orange: 28 94% 59%; /* #F99236 */
+    --brand-white: 0 0% 100%;
+    --brand-light-gray: 210 20% 98%; /* #F8F9FA */
+    
+    /* Semantic tokens */
+    --background: 0 0% 100%;
+    --foreground: 210 78% 23%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 78% 23%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 78% 23%;
+
+    --primary: 210 78% 23%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 98%;
+    --secondary-foreground: 210 78% 23%;
+
+    --accent: 28 94% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 30% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 28 94% 59%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 78% 23%) 0%, hsl(210 78% 15%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(28 94% 59%) 0%, hsl(28 94% 50%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(210 78% 23% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(210 78% 23% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(210 78% 23% / 0.16);
+    --shadow-accent: 0 8px 32px -8px hsl(28 94% 59% / 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 78% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 78% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 78% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 28 94% 59%;
+    --primary-foreground: 210 78% 8%;
+
+    --secondary: 210 78% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 28 94% 59%;
+    --accent-foreground: 210 78% 8%;
+
+    --muted: 210 78% 15%;
+    --muted-foreground: 210 20% 70%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 78% 20%;
+    --input: 210 78% 20%;
+    --ring: 28 94% 59%;
+
+    --sidebar-background: 210 78% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 28 94% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 78% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 78% 20%;
+    --sidebar-ring: 28 94% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: 'Cairo', 'Montserrat', sans-serif;
+  }
+
+  [dir="ltr"] {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-accent);
+  }
+}
