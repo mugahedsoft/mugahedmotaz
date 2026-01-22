@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="section-scroll-offset relative min-h-screen flex items-center justify-center bg-hero overflow-hidden pt-16 sm:pt-20">
+    <section id="home" className="section-scroll-offset relative min-h-screen flex items-center justify-center bg-hero overflow-hidden pt-24 sm:pt-28">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -89,12 +89,12 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
           >
             <Button
               size="lg"
               onClick={() => scrollToSection('#services')}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6 shadow-accent hover:shadow-lg transition-all group"
+              className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6 shadow-accent hover:shadow-lg transition-all group"
             >
               {t('Get Started', 'ابدأ الآن')}
               <ArrowIcon className="w-5 h-5 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 ltr:ml-2 rtl:mr-2" />
@@ -103,7 +103,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection('#contact')}
-              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8 py-6 transition-all"
+              className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8 py-6 transition-all"
             >
               <MessageCircle className="w-5 h-5 ltr:mr-2 rtl:ml-2" />
               {t('Contact Me', 'تواصل معي')}
@@ -136,7 +136,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="hidden sm:block pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
