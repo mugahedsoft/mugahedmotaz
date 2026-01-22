@@ -38,19 +38,16 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-background/95 backdrop-blur-md shadow-card border-b border-border' 
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${isScrolled ? 'shadow-card border-b border-border' : ''
+        }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <motion.a 
+          <motion.a
             href="#home"
             onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
-            className="text-2xl font-bold text-primary"
+            className="text-xl sm:text-2xl font-bold text-primary"
             whileHover={{ scale: 1.02 }}
           >
             <span className="text-accent">m</span>ugahed
@@ -73,13 +70,13 @@ const Header = () => {
           </nav>
 
           {/* Right Section */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             {/* Language Switcher */}
             <Button
               variant="outline"
               size="sm"
               onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
-              className="font-semibold border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
+              className="h-9 px-3 font-semibold border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
             >
               {language === 'en' ? 'AR' : 'EN'}
             </Button>
@@ -96,7 +93,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden"
+              className="lg:hidden h-10 w-10"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,15 +109,15 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-t border-border"
+            className="lg:hidden bg-background border-t border-border max-h-[calc(100vh-4rem)] overflow-y-auto"
           >
-            <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+            <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
-                  className="text-lg font-medium text-foreground/80 hover:text-accent transition-colors py-2"
+                  className="text-base font-medium text-foreground/80 hover:text-accent transition-colors py-2"
                 >
                   {t(item.en, item.ar)}
                 </a>
