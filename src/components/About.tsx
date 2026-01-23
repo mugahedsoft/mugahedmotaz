@@ -59,24 +59,24 @@ const About = () => {
               <div className="absolute inset-0 bg-accent rounded-3xl -rotate-3 opacity-80" />
 
               {/* Main content card */}
-              <div className="relative bg-card rounded-3xl p-8 shadow-lg h-full flex flex-col justify-center">
-                <div className="space-y-6">
+              <div className="relative bg-card rounded-3xl p-6 sm:p-8 shadow-lg h-full flex flex-col justify-center">
+                <div className="space-y-4 sm:space-y-6">
                   {highlights.map((item, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       animate={isInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                      className="flex items-start gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
+                      className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
                     >
                       <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
                         <item.icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-1">
+                        <h4 className="font-semibold text-foreground mb-1 leading-snug">
                           {t(item.en, item.ar)}
                         </h4>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           {t(item.descEn, item.descAr)}
                         </p>
                       </div>

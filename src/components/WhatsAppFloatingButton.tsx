@@ -1,15 +1,21 @@
 import { MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { trackEvent } from '@/lib/analytics';
-
-const WHATSAPP_NUMBER = '249900318100';
+import { WHATSAPP_NUMBER, buildWebsiteLeadMessage, getWhatsAppLink } from '@/lib/whatsapp';
 
 const WhatsAppFloatingButton = () => {
  const { t } = useLanguage();
 
+ const message = buildWebsiteLeadMessage(
+  t(
+   "Hi! I came from mugahedmotaz.com and I'd like to request a service.",
+   'مرحباً! أنا قادم من موقع mugahedmotaz.com وأرغب بطلب خدمة.'
+  )
+ );
+
  return (
   <a
-   href={`https://wa.me/${WHATSAPP_NUMBER}`}
+   href={getWhatsAppLink(message, WHATSAPP_NUMBER)}
    target="_blank"
    rel="noopener noreferrer"
    aria-label={t('Chat on WhatsApp', 'تواصل عبر واتساب')}

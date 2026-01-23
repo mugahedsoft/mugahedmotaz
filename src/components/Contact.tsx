@@ -10,6 +10,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { WHATSAPP_NUMBER, buildWebsiteLeadMessage, getWhatsAppLink } from '@/lib/whatsapp';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -21,6 +22,13 @@ const Contact = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const { toast } = useToast();
   const ArrowIcon = language === 'ar' ? ArrowLeft : ArrowRight;
+
+  const whatsappMessage = buildWebsiteLeadMessage(
+    t(
+      "Hi! I came from mugahedmotaz.com and I'd like to request a service.",
+      'مرحباً! أنا قادم من موقع mugahedmotaz.com وأرغب بطلب خدمة.'
+    )
+  );
 
   const [formData, setFormData] = useState({
     name: '',
@@ -65,7 +73,7 @@ const Contact = () => {
       labelEn: 'WhatsApp',
       labelAr: 'واتساب',
       value: '+249 900318100',
-      href: 'https://wa.me/249900318100',
+      href: `https://wa.me/${WHATSAPP_NUMBER}`,
     },
   ];
 
@@ -99,7 +107,7 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <motion.a
                   key={index}
-                  href={info.href}
+                  href={info.labelEn === 'WhatsApp' ? getWhatsAppLink(whatsappMessage, WHATSAPP_NUMBER) : info.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}

@@ -2,9 +2,17 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { WHATSAPP_NUMBER, buildWebsiteLeadMessage, getWhatsAppLink } from '@/lib/whatsapp';
 
 const ServicesIndex = () => {
  const { t } = useLanguage();
+
+ const whatsappMessage = buildWebsiteLeadMessage(
+  t(
+   "Hi! I came from mugahedmotaz.com and I'd like to request a service.",
+   'مرحباً! أنا قادم من موقع mugahedmotaz.com وأرغب بطلب خدمة.'
+  )
+ );
 
  const services = [
   {
@@ -82,7 +90,7 @@ const ServicesIndex = () => {
       </p>
       <div className="mt-6">
        <a
-        href="https://wa.me/249900318100"
+        href={getWhatsAppLink(whatsappMessage, WHATSAPP_NUMBER)}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-accent-foreground font-semibold hover:bg-accent/90 transition-colors"

@@ -2,9 +2,17 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { WHATSAPP_NUMBER, buildWebsiteLeadMessage, getWhatsAppLink } from '@/lib/whatsapp';
 
 const LandingPagesSeo = () => {
  const { t } = useLanguage();
+
+ const whatsappMessage = buildWebsiteLeadMessage(
+  t(
+   "Hi! I came from mugahedmotaz.com and I'd like to request a service.",
+   'مرحباً! أنا قادم من موقع mugahedmotaz.com وأرغب بطلب خدمة.'
+  )
+ );
  return (
   <div className="min-h-screen bg-background">
    <Header />
@@ -34,7 +42,7 @@ const LandingPagesSeo = () => {
         {t('Request a Landing Page', 'اطلب صفحة هبوط')}
        </a>
        <a
-        href="https://wa.me/249900318100"
+        href={getWhatsAppLink(whatsappMessage, WHATSAPP_NUMBER)}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center rounded-md border border-border px-5 py-3 font-semibold text-foreground hover:border-accent hover:text-accent transition-colors"
