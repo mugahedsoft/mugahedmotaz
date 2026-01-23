@@ -72,21 +72,22 @@ const Contact = () => {
   return (
     <section id="contact" className="section-scroll-offset py-24 bg-secondary" ref={ref}>
       <div className="site-container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-w-0">
           {/* Left Column - Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
+            className="min-w-0"
           >
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">
               {t("Let's Connect", 'لنتواصل')}
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6 break-words">
               {t("Let's Build Your", 'لنبني مشروعك')}{' '}
               <span className="text-accent">{t('Project Together', 'معاً')}</span>
             </h2>
-            <p className="text-muted-foreground text-lg mb-10 max-w-lg">
+            <p className="text-muted-foreground text-lg mb-10 max-w-none lg:max-w-lg">
               {t(
                 "Have a project in mind? I'd love to hear about it. Get in touch and let's create something amazing.",
                 'لديك مشروع في ذهنك؟ أحب أن أسمع عنه. تواصل معي ولنصنع شيئاً مذهلاً.'
@@ -104,7 +105,7 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-accent/50 hover-lift group max-w-full overflow-hidden"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-accent/50 hover-lift group  overflow-hidden"
                 >
                   <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
                     <info.icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
@@ -126,6 +127,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="min-w-0"
           >
             <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 border border-border shadow-card">
               <h3 className="text-2xl font-bold text-foreground mb-6">
