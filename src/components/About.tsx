@@ -43,7 +43,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-scroll-offset py-24 bg-secondary" ref={ref}>
+    <section id="about" className="section-scroll-offset py-28 bg-secondary" ref={ref}>
       <div className="site-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image/Visual */}

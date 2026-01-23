@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { 
-  Award, 
-  Zap, 
-  Code2, 
-  HeartHandshake, 
+import {
+  Award,
+  Zap,
+  Code2,
+  HeartHandshake,
   Clock,
   Shield
 } from 'lucide-react';
@@ -63,7 +63,7 @@ const WhyChooseMe = () => {
 
   return (
     <section className="py-24 bg-background" ref={ref}>
-      <div className="container mx-auto px-4">
+      <div className="site-container">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ const WhyChooseMe = () => {
               className="group relative p-8 rounded-2xl bg-card border border-border hover:border-accent/50 transition-all duration-300 hover-lift"
             >
               {/* Decorative Number */}
-              <span className="absolute top-4 right-4 text-6xl font-bold text-foreground/5 group-hover:text-accent/10 transition-colors">
+              <span className="absolute top-4 ltr:right-4 rtl:left-4 z-0 pointer-events-none select-none text-6xl font-bold text-foreground/5 group-hover:text-accent/10 transition-colors">
                 {String(index + 1).padStart(2, '0')}
               </span>
 

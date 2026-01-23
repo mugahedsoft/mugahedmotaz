@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
@@ -12,6 +13,12 @@ const Footer = () => {
     { en: 'Services', ar: 'الخدمات', href: '#services' },
     { en: 'Portfolio', ar: 'أعمالي', href: '#portfolio' },
     { en: 'Contact', ar: 'تواصل', href: '#contact' },
+  ];
+
+  const servicePages = [
+    { en: 'Web Development', ar: 'تطوير الويب', to: '/services/web-development' },
+    { en: 'UI/UX Design', ar: 'تصميم UI/UX', to: '/services/ui-ux-design' },
+    { en: 'SEO Landing Pages', ar: 'صفحات هبوط SEO', to: '/services/landing-pages-seo' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -44,18 +51,32 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <nav className="flex flex-wrap justify-center gap-6">
-            {quickLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
-                className="text-white/70 hover:text-accent text-sm transition-colors"
-              >
-                {t(link.en, link.ar)}
-              </a>
-            ))}
-          </nav>
+          <div className="flex flex-col items-center gap-4">
+            <nav className="flex flex-wrap justify-center gap-6">
+              {quickLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
+                  className="text-white/70 hover:text-accent text-sm transition-colors"
+                >
+                  {t(link.en, link.ar)}
+                </a>
+              ))}
+            </nav>
+
+            <nav className="flex flex-wrap justify-center gap-4">
+              {servicePages.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="text-white/70 hover:text-accent text-xs transition-colors"
+                >
+                  {t(link.en, link.ar)}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
           {/* Copyright */}
           <div className="text-center md:text-end">

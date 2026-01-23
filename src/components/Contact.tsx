@@ -104,16 +104,16 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-accent/50 hover-lift group"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-accent/50 hover-lift group max-w-full overflow-hidden"
                 >
                   <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
                     <info.icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm text-muted-foreground">
                       {t(info.labelEn, info.labelAr)}
                     </p>
-                    <p className="font-semibold text-foreground">{info.value}</p>
+                    <p className="font-semibold text-foreground break-words">{info.value}</p>
                   </div>
                   <ArrowIcon className="w-5 h-5 text-muted-foreground ltr:ml-auto rtl:mr-auto group-hover:text-accent transition-colors" />
                 </motion.a>

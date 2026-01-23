@@ -12,6 +12,7 @@ import {
   Layers,
   ArrowUpRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
@@ -26,6 +27,7 @@ const Services = () => {
       titleAr: 'تطوير الويب',
       descEn: 'Custom websites, web applications, dashboards, and SaaS platforms built with modern technologies.',
       descAr: 'مواقع ويب مخصصة، تطبيقات ويب، لوحات تحكم، ومنصات SaaS مبنية بأحدث التقنيات.',
+      href: '/services/web-development',
       features: [
         { en: 'Websites', ar: 'مواقع الويب' },
         { en: 'Web Applications', ar: 'تطبيقات الويب' },
@@ -39,6 +41,7 @@ const Services = () => {
       titleAr: 'تصميم UI/UX',
       descEn: 'User-centered design that combines aesthetics with functionality for optimal user experience.',
       descAr: 'تصميم يركز على المستخدم يجمع بين الجماليات والوظائف لتجربة مستخدم مثالية.',
+      href: '/services/ui-ux-design',
       features: [
         { en: 'User Interface Design', ar: 'تصميم واجهة المستخدم' },
         { en: 'User Experience', ar: 'تجربة المستخدم' },
@@ -52,6 +55,7 @@ const Services = () => {
       titleAr: 'التسويق الرقمي',
       descEn: 'Strategic SEO, landing pages, and conversion optimization to maximize your online presence.',
       descAr: 'تحسين محركات البحث، صفحات الهبوط، وتحسين التحويلات لتعظيم حضورك الرقمي.',
+      href: '/services/landing-pages-seo',
       features: [
         { en: 'SEO Optimization', ar: 'تحسين محركات البحث' },
         { en: 'Landing Pages', ar: 'صفحات الهبوط' },
@@ -163,6 +167,16 @@ const Services = () => {
                       {t(feature.en, feature.ar)}
                     </span>
                   ))}
+                </div>
+
+                <div className="mt-6">
+                  <Link
+                    to={service.href}
+                    className="inline-flex items-center gap-2 font-semibold text-accent hover:text-accent/90 transition-colors"
+                  >
+                    {t('Learn more', 'اعرف المزيد')}
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </motion.div>

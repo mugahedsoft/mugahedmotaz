@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D3B66"/>
+      <stop offset="1" stop-color="#082840"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F99236"/>
+      <stop offset="1" stop-color="#F07F18"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="1010" cy="-40" r="260" fill="url(#accent)" opacity="0.22" filter="url(#blur)"/>
+  <circle cx="120" cy="610" r="220" fill="#F99236" opacity="0.16" filter="url(#blur)"/>
+
+  <g opacity="0.10">
+    <path d="M0 0H1200V630H0Z" fill="none"/>
+    <g stroke="#ffffff" stroke-width="1">
+      <path d="M0 90H1200"/>
+      <path d="M0 180H1200"/>
+      <path d="M0 270H1200"/>
+      <path d="M0 360H1200"/>
+      <path d="M0 450H1200"/>
+      <path d="M0 540H1200"/>
+      <path d="M120 0V630"/>
+      <path d="M240 0V630"/>
+      <path d="M360 0V630"/>
+      <path d="M480 0V630"/>
+      <path d="M600 0V630"/>
+      <path d="M720 0V630"/>
+      <path d="M840 0V630"/>
+      <path d="M960 0V630"/>
+      <path d="M1080 0V630"/>
+    </g>
+  </g>
+
+  <g transform="translate(110,155)">
+    <text x="0" y="0" fill="#ffffff" font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="800">mugahedmotaz</text>
+    <text x="0" y="78" fill="#ffffff" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="600" opacity="0.92">Web Development • UI/UX • SEO Landing Pages</text>
+    <text x="0" y="134" fill="#ffffff" font-family="Cairo, Arial, sans-serif" font-size="30" font-weight="700" opacity="0.92">تطوير مواقع • تصميم UI/UX • صفحات هبوط SEO</text>
+
+    <g transform="translate(0,190)">
+      <rect x="0" y="0" width="360" height="70" rx="16" fill="url(#accent)"/>
+      <text x="28" y="46" fill="#0D3B66" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="800">www.mugahedmotaz.com</text>
+    </g>
+  </g>
+
+  <g transform="translate(990,420)">
+    <rect x="0" y="0" width="120" height="120" rx="28" fill="#ffffff" opacity="0.10"/>
+    <text x="28" y="86" fill="#F99236" font-family="Montserrat, Arial, sans-serif" font-size="72" font-weight="900">m</text>
+  </g>
+</svg>
